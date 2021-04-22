@@ -15,9 +15,9 @@ public class LoginSteps extends BaseStep {
     @Step("Логирование с коректрыми данными '{email}' '{psw}'")
     public DashboardPage loginWithCorrectCredentials(String email, String psw) {
         LoginPage loginPage = new LoginPage(browsersService, true);
-        loginPage.getEmailInput().sendKeys(email);
-        loginPage.getPasswordInput().sendKeys(psw);
-        loginPage.getLogInButton().click();
+        loginPage.emailInput.sendKeys(email);
+        loginPage.passwordInput.sendKeys(psw);
+        loginPage.buttonPrimary.click();
 
         return new DashboardPage(browsersService, false);
     }
@@ -25,9 +25,9 @@ public class LoginSteps extends BaseStep {
     @Step
     public LoginPage loginWithIncorrectCredentials(String email, String psw) {
         LoginPage loginPage = new LoginPage(browsersService, true);
-        loginPage.getEmailInput().sendKeys(email);
-        loginPage.getPasswordInput().sendKeys(psw);
-        loginPage.getLogInButton().click();
+        loginPage.emailInput.sendKeys(email);
+        loginPage.passwordInput.sendKeys(psw);
+        loginPage.buttonPrimary.click();
 
         return new LoginPage(browsersService, false);
     }

@@ -70,14 +70,14 @@ public class ProjectSteps extends BaseStep {
         }
 
         if (project.getProjectType() != null) {
-            switch (project.getProjectType().toString()) {
-                case "SINGLE_FOR_ALL_CASES":
+            switch (project.getProjectType()) {
+                case SINGLE_FOR_ALL_CASES:
                     editProject.getType1().click();
                     break;
-                case "SINGLE_FOR_ALL_BASELINE":
+                case SINGLE_WITH_BASELINE:
                     editProject.getType2().click();
                     break;
-                case "MULTIPLE":
+                case MULTIPLE:
                     editProject.getType3().click();
                     break;
             }

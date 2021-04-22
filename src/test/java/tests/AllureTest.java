@@ -39,9 +39,9 @@ public class AllureTest extends BaseTest {
         LoginPage loginPage = loginSteps.loginWithIncorrectCredentials("test@gmail.com", "qweqwe");
 
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(loginPage.getErrorText(),
+        softAssert.assertEquals(loginPage.errorLabel.getText(),
                 "Email/Login or Password is incorrect. Please try again.1");
-        softAssert.assertEquals(loginPage.getErrorText(),
+        softAssert.assertEquals(loginPage.errorLabel.getText(),
                 "Email/Login or Password is incorrect. Please try again.2");
         softAssert.assertAll();
     }

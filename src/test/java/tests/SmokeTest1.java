@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SmokeTest1 extends BaseTest {
 
-    @Test(groups = {"smoke", "regression"}, timeOut = 5000l)
+    @Test
     public void LoginTest() {
 /*
         1. Запустить драйвер
@@ -57,10 +57,10 @@ public class SmokeTest1 extends BaseTest {
         LoginPage loginPage = loginSteps.loginWithIncorrectCredentials("test@gmail.com", "qweqwe");
 
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(loginPage.getErrorText(),
-                "Email/Login or Password is incorrect. Please try again.1");
-        softAssert.assertEquals(loginPage.getErrorText(),
-                "Email/Login or Password is incorrect. Please try again.2");
+        softAssert.assertEquals(loginPage.errorLabel.getText(),
+                "Email/Login or Password is incorrect. Please try again.");
+        softAssert.assertEquals(loginPage.errorLabel.getText(),
+                "Email/Login or Password is incorrect. Please try again.");
         softAssert.assertAll();
     }
 
@@ -94,9 +94,9 @@ public class SmokeTest1 extends BaseTest {
     @Test
     public void waitTest() {
         LoginPage loginPage = new LoginPage(browsersService, true);
-        loginPage.getEmailInput().sendKeys("atrostyanko+0401@gmail.com");
-        loginPage.getPasswordInput().sendKeys("QqtRK9elseEfAk6ilYcJ");
-        loginPage.getLogInButton().click();
+        loginPage.emailInput.sendKeys("atrostyanko+0401@gmail.com");
+        loginPage.passwordInput.sendKeys("QqtRK9elseEfAk6ilYcJ");
+        loginPage.buttonPrimary.click();
 
         long start = new Date().getTime();
         WebElement element = waits.waitForVisibility(new DashboardPage(browsersService, false).getSidebarProjectsAddButton());
