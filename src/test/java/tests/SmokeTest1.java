@@ -3,6 +3,7 @@ package tests;
 import baseEntities.BaseTest;
 import enums.ProjectType;
 import models.Project;
+import models.ProjectBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -172,5 +173,41 @@ public class SmokeTest1 extends BaseTest {
             e.printStackTrace();
         }
 
+    }
+
+//    @Test
+//    public void chainTest(){
+//        LoginSteps loginSteps = new LoginSteps(browsersService);
+//
+//        loginSteps
+//                .setEmail("atrostyanko+0401@gmail.com")
+//                .action2("QqtRK9elseEfAk6ilYcJ")
+//                .action3();
+//
+//    }
+
+    @Test
+    public void AddProjectsTest() {
+        ProjectBuilder project = new ProjectBuilder.Builder()
+                .withName("aaa")
+                .withAnnouncement("")
+                .withisShowAnnouncement(true)
+                .withProjectType(ProjectType.MULTIPLE)
+                .build();
+
+        Project project1 = new Project();
+        project1.setName("AZjablicev_01");
+        project1.setAnnouncement("project1");
+        project1.setShowAnnouncement(false);
+        project1.setProjectType(ProjectType.MULTIPLE);
+
+
+        LoginSteps loginSteps = new LoginSteps(browsersService);
+        loginSteps.loginWithCorrectCredentials("atrostyanko+0401@gmail.com", "QqtRK9elseEfAk6ilYcJ");
+
+        ProjectSteps projectsSteps = new ProjectSteps(browsersService);
+        projectsSteps.addProject(project1);
+
+        Assert.assertTrue(projectsSteps.getMessageSuccessAdd().isDisplayed());
     }
 }

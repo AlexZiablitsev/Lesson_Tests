@@ -11,12 +11,13 @@ public abstract class BasePage {
     public String baseUrl;
 
     protected abstract void openPage();
+
     public abstract boolean isPageOpened();
 
     public BasePage(BrowsersService browsersService, boolean openPageByUrl) {
         this.browsersService = browsersService;
         this.driver = browsersService.getDriver();
-        this.baseUrl = new ReadProperties().getURL();
+        this.baseUrl = ReadProperties.getURL();
 
         if (openPageByUrl) {
             openPage();

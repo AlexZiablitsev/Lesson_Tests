@@ -22,7 +22,6 @@ public abstract class BaseTest {
     @BeforeGroups(groups = {"regression", "smoke"})
     public void setupGroups() {
         System.out.println("BeforeGroups: ");
-        readProperties = new ReadProperties();
         browsersService = new BrowsersService();
         browsersService.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         browsersService.getDriver().get(readProperties.getURL());
@@ -42,7 +41,6 @@ public abstract class BaseTest {
     @BeforeMethod
     public void setupMethod() {
         System.out.println("BeforeMethod: ");
-        readProperties = new ReadProperties();
         browsersService = new BrowsersService();
         browsersService.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
         browsersService.getDriver().get(readProperties.getURL());
