@@ -1,7 +1,9 @@
 package models;
 
 import enums.ProjectType;
+import lombok.Builder;
 
+@Builder
 public class Project {
     private String name;
     private String newName;

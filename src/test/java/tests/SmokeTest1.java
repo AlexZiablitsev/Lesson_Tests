@@ -65,23 +65,23 @@ public class SmokeTest1 extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test
-    public void AddProjectTest() {
-        Project project1 = new Project();
-        project1.setName("AZjablicev_01");
-        project1.setAnnouncement("project1");
-        project1.setShowAnnouncement(false);
-        project1.setProjectType(ProjectType.MULTIPLE);
-
-
-        LoginSteps loginSteps = new LoginSteps(browsersService);
-        loginSteps.loginWithCorrectCredentials("atrostyanko+0401@gmail.com", "QqtRK9elseEfAk6ilYcJ");
-
-        ProjectSteps projectsSteps = new ProjectSteps(browsersService);
-        projectsSteps.addProject(project1);
-
-        Assert.assertTrue(projectsSteps.getMessageSuccessAdd().isDisplayed());
-    }
+//    @Test
+//    public void AddProjectTest() {
+//        Project project1 = new Project();
+//        project1.setName("AZjablicev_01");
+//        project1.setAnnouncement("project1");
+//        project1.setShowAnnouncement(false);
+//        project1.setProjectType(ProjectType.MULTIPLE);
+//
+//
+//        LoginSteps loginSteps = new LoginSteps(browsersService);
+//        loginSteps.loginWithCorrectCredentials("atrostyanko+0401@gmail.com", "QqtRK9elseEfAk6ilYcJ");
+//
+//        ProjectSteps projectsSteps = new ProjectSteps(browsersService);
+//        projectsSteps.addProject(project1);
+//
+//        Assert.assertTrue(projectsSteps.getMessageSuccessAdd().isDisplayed());
+//    }
 
     @Test
     public void deleteProjectTest(){
@@ -186,28 +186,28 @@ public class SmokeTest1 extends BaseTest {
 //
 //    }
 
-    @Test
-    public void AddProjectsTest() {
-        ProjectBuilder project = new ProjectBuilder.Builder()
-                .withName("aaa")
-                .withAnnouncement("")
-                .withisShowAnnouncement(true)
-                .withProjectType(ProjectType.MULTIPLE)
-                .build();
-
-        Project project1 = new Project();
-        project1.setName("AZjablicev_01");
-        project1.setAnnouncement("project1");
-        project1.setShowAnnouncement(false);
-        project1.setProjectType(ProjectType.MULTIPLE);
-
-
-        LoginSteps loginSteps = new LoginSteps(browsersService);
-        loginSteps.loginWithCorrectCredentials("atrostyanko+0401@gmail.com", "QqtRK9elseEfAk6ilYcJ");
-
-        ProjectSteps projectsSteps = new ProjectSteps(browsersService);
-        projectsSteps.addProject(project1);
-
-        Assert.assertTrue(projectsSteps.getMessageSuccessAdd().isDisplayed());
-    }
+//    @Test
+//    public void AddProjectsTest() {
+//        ProjectBuilder project = new ProjectBuilder.Builder()
+//                .withName("aaa")
+//                .withAnnouncement("")
+//                .withisShowAnnouncement(true)
+//                .withProjectType(ProjectType.MULTIPLE)
+//                .build();
+//
+//        Project project1 = new Project();
+//        project1.setName("AZjablicev_01");
+//        project1.setAnnouncement("project1");
+//        project1.setShowAnnouncement(false);
+//        project1.setProjectType(ProjectType.MULTIPLE);
+//
+//
+//        LoginSteps loginSteps = new LoginSteps(browsersService);
+//        loginSteps.loginWithCorrectCredentials("atrostyanko+0401@gmail.com", "QqtRK9elseEfAk6ilYcJ");
+//
+//        ProjectSteps projectsSteps = new ProjectSteps(browsersService);
+//        projectsSteps.addProject(project1);
+//
+//        Assert.assertTrue(projectsSteps.getMessageSuccessAdd().isDisplayed());
+//    }
 }
