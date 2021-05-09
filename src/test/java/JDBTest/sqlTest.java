@@ -1,5 +1,8 @@
 package JDBTest;
 
+import dao.ProjectDao;
+import dao.ProjectDaoImplementation;
+import models.Project;
 import org.testng.annotations.Test;
 import org.testng.log4testng.Logger;
 import services.JdbcService;
@@ -25,5 +28,21 @@ public class sqlTest {
         }
 
         jdbcService.closeConnection();
+    }
+
+    @Test
+    public void test1() throws SQLException {
+        ProjectDaoImplementation prDao = new ProjectDaoImplementation();
+
+        Project project = prDao.getProject(1);
+        System.out.println(project.toString());
+    }
+
+    @Test
+    public void test2() throws SQLException {
+        ProjectDaoImplementation prDao = new ProjectDaoImplementation();
+
+        Project project = prDao.getProject(1);
+        System.out.println(project.toString());
     }
 }

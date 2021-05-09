@@ -5,6 +5,7 @@ import lombok.Builder;
 
 @Builder
 public class Project {
+    int id;
     private String name;
     private String newName;
     private String Announcement;
@@ -51,4 +52,11 @@ public class Project {
         return projectType;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
